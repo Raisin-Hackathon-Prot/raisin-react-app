@@ -8,11 +8,25 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
-  Text,
-  View
+  Navigator,
+  View,
+  Text
 } from 'react-native';
 
+
+var CountryScreen = require('./CountryScreen');
+
 class group2 extends Component {
+	render() {
+		return (
+		      <Navigator
+		      initialRoute={{ title: 'Awesome Scene', index: 0 }}
+        renderScene={(route, navigator) => <CountryScreen/> }/>
+		    );
+  }
+}
+/**
+
   render() {
     return (
       <View style={styles.container}>
@@ -28,9 +42,7 @@ class group2 extends Component {
         </Text>
       </View>
     );
-  }
-}
-
+*/
 const styles = StyleSheet.create({
   container: {
     flex: 1,
